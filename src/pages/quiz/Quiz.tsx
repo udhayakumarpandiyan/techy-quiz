@@ -128,9 +128,7 @@ const Quiz: FC<QuizProps> = ({ title }) => {
 
         }
     }
-    const onQuitClick = () => {
 
-    }
     return (
         <div className="quiz-container">
             <TopBar />

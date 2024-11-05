@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './App.css';
 import Quiz from './pages/quiz/Quiz';
 import { Route, RouterProvider } from './route/components/Router';
@@ -7,7 +6,7 @@ import SignUp from './pages/login/SignUp';
 import Editor from './pages/editor/Editor';
 
 function App() {
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState<boolean>(true);
+  const isUserLoggedIn = true;
   const onSignup = () => {
     window.history.pushState({}, "", '/user/register');
   }

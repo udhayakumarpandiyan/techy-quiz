@@ -1,14 +1,11 @@
-import { FC, useEffect, useMemo, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { IDifficultyLevel } from "./Question";
 
 interface CounterProps {
     level: IDifficultyLevel;
 }
-const Counter: FC<CounterProps> = ({ level }) => {
+const Counter: FC<CounterProps> = ({level}) => {
     const [counterValue, setCounterValue] = useState<number>(() => 100);
-    let maxLevel = useMemo(() => {
-        return level === 2 ? (1.5 * 60) : level * 60;
-    }, []);
 
     useEffect(() => {
         let interval: any;
@@ -20,7 +17,7 @@ const Counter: FC<CounterProps> = ({ level }) => {
             }, 1000);
         }
         return () => clearInterval(interval);
-    }, []);
+    }, [counterValue]);
 
     return <progress value={counterValue} max={100} className="slide-in" />
 }
