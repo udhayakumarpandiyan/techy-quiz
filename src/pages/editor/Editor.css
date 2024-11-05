@@ -1,0 +1,197 @@
+.quiz-container {
+    width: 100%;
+    height: 100vh;
+}
+
+.quiz-main-container {
+    width: 100%;
+    height: calc(100vh - 150px);
+    padding: 30px 60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    overflow-y: auto;
+
+}
+
+.question-outer-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.question-container {
+    border: 1px solid #fff;
+    border-radius: 6px;
+    background: #ecf3f8;
+    color: #212529;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 16px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.question-label {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 8px;
+    padding-right: 20px;
+}
+
+.answers-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.option-container {
+    border: 1px solid #fff;
+    border-radius: 20px;
+    background: #ecf3f8;
+    color: #212529;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0px;
+    padding: 10px;
+    text-align: left;
+}
+
+.option-checkbox {
+    width: 16px !important;
+    height: 16px !important;
+    border: none;
+    accent-color: #1f8747;
+}
+
+.option-label {
+    padding: 0px 10px;
+}
+
+.quiz-footer {
+    width: 100%;
+    padding: 20px 60px 30px 60px;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    background-color: transparent;
+}
+
+.quiz-footer-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quiz-footer-left {
+    display: flex;
+    justify-content: left;
+}
+
+.quiz-footer-right {
+    display: flex;
+    justify-content: right;
+}
+
+.action-button {
+    min-width: 120px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #212529;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.submit-button {
+    min-width: 160px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #1f8747;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+
+.quit-button {
+    min-width: 100px;
+    padding: 10px;
+    margin: 0px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #cc4a43;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.wipe-in-horizontal {
+    overflow: hidden;
+    animation: wipeInHorizontal 1s forwards ease-in-out;
+  }
+  
+  /* Horizontal wipe animation */
+  @keyframes wipeInHorizontal {
+    from {
+      transform: scaleX(0);
+      transform-origin: top;
+    }
+    to {
+      transform: scaleX(1);
+      transform-origin: top;
+    }
+  }
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+/* Slide-in from right */
+.slide-in {
+    animation: slideIn 0.8s forwards ease-in-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Slide-out to left */
+  .slide-out {
+    animation: slideOut 0.8s forwards ease-in-out;
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }

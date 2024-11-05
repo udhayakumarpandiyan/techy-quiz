@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Quiz from './pages/quiz/Quiz';
+import { Route, RouterProvider } from './route/components/Router';
+import { EDITOR, QUIZ } from './route/paths';
+import SignUp from './pages/login/SignUp';
+import Editor from './pages/editor/Editor';
 
 function App() {
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState<boolean>(true);
+  const onSignup = () => {
+    window.history.pushState({}, "", '/user/register');
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {isUserLoggedIn ? <RouterProvider>
+        <Route path={QUIZ} component={<Quiz title='test' />} />
+        <Route path={EDITOR} component={<Editor title='Editor' />} />
+      </RouterProvider>
+        : <RouterProvider>
+          <Route path="/" component={<div>
+            <button onClick={onSignup}>Signup</button>
+          </div>} />
+          <Route path="/user/register" component={<SignUp />} />
+        </RouterProvider>
+      }
     </div>
   );
 }
